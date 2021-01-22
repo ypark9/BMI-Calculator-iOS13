@@ -51,6 +51,11 @@ class ViewController: UIViewController {
     {
         curBMI = bmiBrain.calBmi(weight: curWeight, height: curHeight)
         print("This is current value : BMI \(curBMI) weight: \(curWeight) height: \(curHeight)")
+//
+//        let secondVC = SecondViewController()
+//        secondVC.bmiValue = String(format: "%.1f",  curBMI)
+//        self.present(secondVC, animated: true, completion: nil)
+        
     }
 }
 
