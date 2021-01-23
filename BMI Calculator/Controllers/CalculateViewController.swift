@@ -51,11 +51,17 @@ class CalculateViewController: UIViewController {
     {
         curBMI = bmiBrain.calBmi(weight: curWeight, height: curHeight)
         print("This is current value : BMI \(curBMI) weight: \(curWeight) height: \(curHeight)")
-//
-//        let secondVC = SecondViewController()
+        self.performSegue(withIdentifier: "goToResult", sender: self)//        let secondVC = SecondViewController()
 //        secondVC.bmiValue = String(format: "%.1f",  curBMI)
 //        self.present(secondVC, animated: true, completion: nil)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToResult") {
+            let destinationVC = segue.destination as! ResultViewController
+            destinationVC.bmiValue = String(format: "%.1f", curBMI)
+        }
     }
 }
 
