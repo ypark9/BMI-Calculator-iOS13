@@ -10,12 +10,14 @@ import UIKit
 
 class ResultViewController: UIViewController {
     var bmiValue : String = ""
+    var bmiBrain = BmiBrain()
     @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var adviceLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         bmiLabel.text = bmiValue
+        self.view.backgroundColor = bmiBrain.getBGColorBasedBMI(bmi: Float(bmiValue)!)
     }
     
     @IBAction func recalculatePressed(_ sender: UIButton) {
